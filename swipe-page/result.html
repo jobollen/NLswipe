@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Your Website Title</title>
 
     <meta property="og:url"           content="http://xrum.org/start.html" />
     <meta property="og:type"          content="music" />
@@ -19,39 +20,56 @@
     <script src="../_assets/js/index.js"></script>
     <script src="../js/jquery.mobile-1.4.2.min.js"></script>
     <script src="swipe-page.js"></script>
+
 </head>
 <body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=716709888414134";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <div id="header" data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
     <h1>De Nieuwe Lichting</h1>
 </div><!-- /header -->
 
-<div data-role="page" id="index" class="demo-page" data-title="De Nieuwe Lichting" data-dom-cache="true" data-theme="b" data-prev="kalf_1" data-next="moments_1">
+<div data-role="page" id="index" class="demo-page" data-title="De Nieuwe Lichting" data-dom-cache="true" data-theme="b" data-prev="share" data-next="share">
 
     <div role="main" class="ui-content" >
 
         <div class="ui-body ui-body-a ui-corner-all">
-            <h3>Welkom!</h3>
-            <h4>Stem op jouw favoriete band.</h4>
-            <p>Swipe rechts voor goed</p>
-            <p>Swipe links voor niet goed</p>
+            <h3>Je vond deze bands goed</h3>
+            <h4></h4>
+            <p>Band1</p>
+            <p>Band2</p>
+            <p>Band3</p>
         </div>
+
+        <div class="ui-body-bottom ui-body-a ui-corner-all">
+            <div class="fb-share-button"
+                 data-href="https://xrum.org/start.html"
+                 data-layout="button_count"
+                 data-size="large"
+                 data-mobile-iframe="true">
+            </div>
+        </div>
+
         <div id="trivia-moments" class="trivia ui-content" data-role="popup" data-position-to="window" data-tolerance="50,30,30,30" data-theme="a">
             <a href="#" data-rel="back" class="ui-btn ui-btn-right ui-btn-b ui-btn-icon-notext ui-icon-delete ui-corner-all">Close</a>
             <p>Ook dit jaar gaat Studio Brussel op zoek naar De Nieuwe Lichting. Tijdens elke uitzending van Zender stellen we één genomineerde aan jullie voor.</p>
         </div>
+
     </div>
 
 </div><!-- /page -->
 
 <div id="footer" data-id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
 
-    <div data-role="controlgroup" class="control" data-type="horizontal" data-mini="true">
-        <a href="#" class="next ui-btn ui-btn-icon-notext ui-icon-delete">Nope</a>
-        <a href="#" class="prev ui-btn ui-btn-icon-notext ui-icon-heart">Love</a>
-    </div>
-
-    <a href="#trivia-moments" id="trivia-button" data-rel="popup" class="trivia-btn ui-btn ui-btn-right ui-btn-icon-left ui-icon-info ui-mini ui-corner-all">Trivia</a>
+    <!--<a href="#trivia-moments" id="trivia-button" data-rel="popup" class="trivia-btn ui-btn ui-btn-right ui-btn-icon-left ui-icon-info ui-mini ui-corner-all">Trivia</a>-->
 
 </div><!-- /footer -->
 

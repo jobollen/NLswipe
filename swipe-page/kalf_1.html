@@ -17,7 +17,6 @@
 
 <div id="header" data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
 	<h1>Kalf</h1>
-    <a href="../" data-ajax="false" data-direction="reverse" data-icon="delete" data-iconpos="notext" data-shadow="false" data-icon-shadow="false">Back</a>
 </div><!-- /header -->
 
 <div data-role="page" id="kalf_1" class="demo-page" data-title="Kalf" data-dom-cache="true" data-theme="b" data-prev="moments_1" data-next="kalf_2" data-song="http://nieuwelichting.be/uploads/phpNmvDhm.mp3">
@@ -35,19 +34,18 @@
 </div><!-- /page -->
 
 <div id="footer" data-id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
-	<div data-role="controlgroup" class="control ui-btn-left" data-type="horizontal" data-mini="true">
-		<a href="#" class="prev ui-btn ui-btn-icon-notext ui-icon-carat-l">Previous</a>
-		<a href="#" class="next ui-btn ui-btn-icon-notext ui-icon-carat-r">Next</a>
-		<button class="mute ui-btn ui-icon-audio ui-btn-icon-left ui-shadow ui-corner-all">audio</button>
+
+	<div data-role="controlgroup" class="control" data-type="horizontal" data-mini="true">
+
+		<a href="#" class="next ui-btn ui-btn-icon-notext ui-icon-delete">Nope</a>
+		<a href="#" class="prev ui-btn ui-btn-icon-notext ui-icon-heart">Love</a>
 	</div>
 
-	<audio id="audio-player">
-		<source id="mpeg-src" src="" type="audio/mpeg">
-	</audio>
-
-	<a href="#trivia-kalf" id="trivia-button" data-rel="popup" class="trivia-btn ui-btn ui-btn-right ui-btn-icon-left ui-icon-info ui-mini ui-corner-all">Trivia</a>
+	<a href="#trivia-moments" id="trivia-button" data-rel="popup" class="trivia-btn ui-btn ui-btn-right ui-btn-icon-left ui-icon-info ui-mini ui-corner-all">Trivia</a>
 
 </div><!-- /footer -->
-
+<audio id="audio-player" controles>
+	<source id="mpeg-src" src="" type="audio/mpeg">
+</audio>
 </body>
 </html>

@@ -42,3 +42,10 @@ small {
 	/* bring your own prefixes */
 	transform: translate(-50%, -50%);
 }
+.ui-body-bottom {
+	position: fixed;
+	top: 75%;
+	left: 50%;
+	/* bring your own prefixes */
+	transform: translate(-50%, -50%);
+}
