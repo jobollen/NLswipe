@@ -10,6 +10,7 @@ $( document ).one( "pagecreate", ".demo-page", function() {
 		$( ":mobile-pagecontainer" ).pagecontainer( "change", next + ".html", {
 			transition: "slide"
 		});
+		playAudio()
 	}
 
 	// Handler for navigating to the previous page
@@ -18,7 +19,13 @@ $( document ).one( "pagecreate", ".demo-page", function() {
 			transition: "slide",
 			reverse: true
 		});
+		playAudio()
 	}
+
+    function playAudio() {
+        var audio = $("#audio-player");
+        audio[0].play();
+    }
 
 	// Navigate to the next page on swipeleft
 	$( document ).on( "swipeleft", ".ui-page", function( event ) {
@@ -68,12 +75,10 @@ $( document ).one( "pagecreate", ".demo-page", function() {
     });
 
     $( document ).on( "click", ".play", function() {
-        var audio = $("#audio-player");
-        audio[0].play();
+        playAudio();
     });
 
 });
-
 
 $( document ).on( "pageshow", ".demo-page", function() {
 
@@ -95,7 +100,6 @@ $( document ).on( "pageshow", ".demo-page", function() {
 
         	audio[0].pause();
         	audio[0].load();//suspends and restores all audio element
-
         	audio[0].oncanplaythrough = function() { audio[0].play();}
         }
     }
