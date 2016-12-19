@@ -1,47 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>De Nieuwe Lichting</title>
-    <link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.2.min.css">
-    <link rel="stylesheet" href="_assets/css/jqm-demos.css">
-    <link rel="stylesheet" href="swipe-page/swipe-page.css">
-    <link rel="shortcut icon" href="favicon.ico">
-    <script src="js/jquery.js"></script>
-    <script src="_assets/js/index.js"></script>
-    <script src="js/jquery.mobile-1.4.2.min.js"></script>
-    <script src="swipe-page/swipe-page.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Kalf</title>
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile-1.4.2.min.css">
+	<link rel="stylesheet" href="_assets/css/jqm-demos.css">
+	<link rel="stylesheet" href="swipe-page/swipe-page.css">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<script src="js/jquery.js"></script>
+	<script src="_assets/js/index.js"></script>
+	<script src="js/jquery.mobile-1.4.2.min.js"></script>
+	<script src="swipe-page/swipe-page.js"></script>
+	<script type="text/javascript">
+        <!--
+        // Create an array of the links to choose from:
+//        var links = ["/kalf_1.html", "/kalf_2.html", "/kalf_3.html", "/kalf_4.html", "/moments_1.html", "/moments_2.html",  "/moments_3.html",  "/moments_4.html"];
+        var links = ["/moments_1.html"];
+
+        function openLink() {
+            window.location.href = "swipe-page/start.html";
+            return false;
+        }
+        //-->
+	</script>
+
 </head>
-<body>
-
-<div id="header" data-role="header" data-id="header" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
-    <h1>De Nieuwe Lichting</h1>
-</div><!-- /header -->
-
-<div data-role="page" id="index" class="demo-page" data-title="De Nieuwe Lichting" data-dom-cache="true" data-theme="b" data-prev="start" data-next="start">
-
-    <div role="main" class="ui-content" >
-
-        <div class="ui-body ui-body-a ui-corner-all" align-verticale="middle" align="center">
-            <h3>Welkom stem op jouw band favoriete band.</h3>
-            <p>Swipe rechts voor goed Swipe links voor niet goed</p>
-        </div>
-
-    </div>
-
-</div><!-- /page -->
-
-<div id="footer" data-id="footer" data-position="fixed" data-fullscreen="true" data-tap-toggle="false">
-
-    <div data-role="controlgroup" class="control" data-type="horizontal" data-mini="true">
-        <a href="#" class="start ui-btn ui-btn-icon-notext ui-icon-arrow-r">Nope</a>
-    </div>
 
 
-</div><!-- /footer -->
-<audio id="audio-player" controles>
-    <source id="mpeg-src" src="" type="audio/mpeg">
-</audio>
+<body onload="openLink();">
 </body>
 </html>
