@@ -2,9 +2,17 @@
 // but we only need to bind once so we use "one()"
 $( document ).one( "pagecreate", ".demo-page", function() {
 
+	// The same for the navigating to the previous page
+    $( document ).on( "swiperight", ".ui-page", function( event ) {
 
+    	var audio = $("#audio-player");
+        //audio[0].pause();
+        audio[0].load();//suspends and restores all audio element
+        audio[0].oncanplaythrough = audio[0].play();
+    });
 
 });
+
 
 $( document ).on( "pageshow", ".demo-page", function() {
 

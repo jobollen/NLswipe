@@ -64,17 +64,16 @@ $( document ).one( "pagecreate", ".demo-page", function() {
 
     $( document ).on( "click", ".mute", function() {
         var audio = $("#audio-player");
-
         audio[0].pause();
     });
 
     $( document ).on( "click", ".play", function() {
         var audio = $("#audio-player");
-
         audio[0].play();
     });
 
 });
+
 
 $( document ).on( "pageshow", ".demo-page", function() {
 
@@ -130,4 +129,17 @@ $( document ).on( "pageshow", ".demo-page", function() {
 	if ( ! prev ) {
 		$( ".prev" ).addClass( "ui-state-disabled" );
 	}
+
+	// Create an array of the links to choose from:
+	//       var links = ["/kalf_1.html", "/kalf_2.html", "/kalf_3.html", "/kalf_4.html", "/moments_1.html", "/moments_2.html",  "/moments_3.html",  "/moments_4.html"];
+    var links = ["/moments_1.html"];
+
+    function openLink() {
+        // Chooses a random link:
+        var i = Math.floor(Math.random() * links.length);
+        // Directs the browser to the chosen target:
+        window.location.href = "swipe-page" + links[i];
+        return false;
+    }
+
 });
