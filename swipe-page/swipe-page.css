@@ -1,14 +1,9 @@
 /* Set the background image sources */
-#kalf_1 { background-image: url("../_assets/img/kalf_1.jpg"); }
-#kalf_2 { background-image: url("../_assets/img/kalf_2.jpg"); }
-#kalf_3 { background-image: url("../_assets/img/kalf_3.jpg"); }
-#kalf_4 { background-image: url("../_assets/img/kalf_4.jpg"); }
+#kalf { background-image: url("../_assets/img/kalf.jpg"); }
 #kalf_vote { background-image: url("../_assets/img/kalf_vote.jpg"); }
-#moments_1 { background-image: url("../_assets/img/moments_1.jpg"); }
-#moments_2 { background-image: url("../_assets/img/moments_2.jpg"); }
-#moments_3 { background-image: url("../_assets/img/moments_3.jpg"); }
-#moments_4 { background-image: url("../_assets/img/moments_4.jpg"); }
+#moments { background-image: url("../_assets/img/moments.jpg"); }
 #moments_vote { background-image: url("../_assets/img/moments_vote.jpg"); }
+#tundra { background-image: url("../_assets/img/tundra.jpg"); }
 /* Background settings */
 .demo-page {
 	background-size: cover;
