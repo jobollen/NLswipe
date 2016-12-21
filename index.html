@@ -9,28 +9,23 @@
   <link rel="stylesheet" href="swipe-page/swipe-page.css">
   <link rel="shortcut icon" href="../favicon.ico">
   <script src="js/jquery.js"></script>
+  <script src="js/jquery.nieuwelichting.js"></script>
+  <script src="js/jquery.nieuwelichting.mobile.swipe-page.js"></script>
   <script src="_assets/js/index.js"></script>
   <script src="js/jquery.mobile-1.4.2.min.js"></script>
-  <script src="swipe-page/swipe-page.js"></script>
   <script type="text/javascript">
     <!--
-    // Create an array of the links to choose from:
-    var links = ["/kalf.html", "/moments.html", "/tundra.html"];
-    var votes = {
-      likes:{
-        counter: 0,
-        names: [],
-      },
-      dislikes: {
-        counter: 0,
-        names: [],
-      }
+    var nlSettings = {
+      bands: ['kalf', 'moments', 'tundra']
     };
+
+    nlSettings.bands = NL.shuffleArray(nlSettings.bands);
+    NL.init(nlSettings);
+
     function openLink() {
-      // Chooses a random link:
-      var i                = Math.floor(Math.random() * links.length);
+      var path = NL.settings().bandPagePath(0);
       // Directs the browser to the chosen target:
-      window.location.href = "swipe-page" + links[i];
+      window.location.href = "swipe-page" + path;
       return false;
     }
     //-->

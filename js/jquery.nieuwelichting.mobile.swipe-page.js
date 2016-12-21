@@ -1,5 +1,40 @@
 // Pagecreate will fire for each of the pages in this demo
 // but we only need to bind once so we use "one()"
+
+$(document).on("mobileinit", function() {
+
+  var bands = ['kalf', 'moments', 'tundra'];
+  // Create an array of the links to choose from:
+  var links = [];
+  var votes = {};
+  var defaultVotes = {
+    likes:{
+      counter: 0,
+      names: [],
+    },
+    dislikes: {
+      counter: 0,
+      names: [],
+    }
+  };
+
+
+  $.each(bands, function( key, value ){
+    links.push("/" + value + ".html");
+    votes[value] = defaultVotes;
+  });
+
+  var _nieuwelichting = {};
+  _nieuwelichting.links = links;
+  _nieuwelichting.votes = votes;
+
+  $.extend( $.mobile , {
+    nieuwelichting: _nieuwelichting,
+  });
+
+  console.log($.mobile);
+});
+
 $(document).one("pagecreate", ".demo-page", function () {
   // Initialize the external persistent header and footer
   $("#header").toolbar({theme: "b"});
