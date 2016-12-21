@@ -5,22 +5,36 @@ $( document ).one( "pagecreate", ".demo-page", function() {
 	$( "#header" ).toolbar({ theme: "b" });
 	$( "#footer" ).toolbar({ theme: "b" });
 
-	// Handler for navigating to the next page
-	function navnext( next ) {
-		$( ":mobile-pagecontainer" ).pagecontainer( "change", next + ".html", {
+
+
+	// Handler for navigating to the nope page
+	function navNope( nope ) {
+
+		$( ":mobile-pagecontainer" ).pagecontainer( "change", nope + ".html", {
 			transition: "slide"
 		});
 		playAudio()
 	}
 
-	// Handler for navigating to the previous page
-	function navprev( prev ) {
-		$( ":mobile-pagecontainer" ).pagecontainer( "change", prev + ".html", {
+	// Handler for navigating to the like page
+	function navLike( like ) {
+
+		$("#audio-player")
+		$( ":mobile-pagecontainer" ).pagecontainer( "change", like + ".html", {
 			transition: "slide",
 			reverse: true
 		});
 		playAudio()
+
 	}
+
+	function storeLike( thePage ) {
+        likedTitel = thePage.jqmData( "title" )
+        allLikes = thePage.jqmData( "allLikes")
+        thePage.jqmData( "allLikes",  string(thePage.jqmData( "allLikes" )) + "," + likedTitel)
+        allLikes = thePage.jqmData( "allLikes")
+
+    }
 
     function playAudio() {
         var audio = $("#audio-player");
@@ -31,41 +45,42 @@ $( document ).one( "pagecreate", ".demo-page", function() {
 	$( document ).on( "swipeleft", ".ui-page", function( event ) {
 		// Get the filename of the next page. We stored that in the data-next
 		// attribute in the original markup.
-		var next = $( this ).jqmData( "next" );
+		var nope = $( this ).jqmData( "nope" );
 
 		// Check if there is a next page and
 		// swipes may also happen when the user highlights text, so ignore those.
 		// We're only interested in swipes on the page.
-		if ( next && ( event.target === $( this )[ 0 ] ) ) {
-			navnext( next );
+		if ( nope && ( event.target === $( this )[ 0 ] ) ) {
+			navNope( nope );
 		}
 
 	});
 
-	// Navigate to the next page when the "next" button in the footer is clicked
-	$( document ).on( "click", ".prev", function() {
-		var next = $( ".ui-page-active" ).jqmData( "next" );
+	// Navigate to the nope page when the "nope" button in the footer is clicked
+	$( document ).on( "click", ".nope", function() {
+		var nope = $( ".ui-page-active" ).jqmData( "nope" );
 
-		// Check if there is a next page
-		if ( next ) {
-			navnext( next );
+		// Check if there is a nope page
+		if ( nope ) {
+			navNope( nope );
 		}
 	});
 
-	// The same for the navigating to the previous page
+	// The same for the navigating to the like page
 	$( document ).on( "swiperight", ".ui-page", function( event ) {
-		var prev = $( this ).jqmData( "prev" );
+		var like = $( this ).jqmData( "like" );
 
-		if ( prev && ( event.target === $( this )[ 0 ] ) ) {
-			navprev( prev );
+		if ( like && ( event.target === $( this )[ 0 ] ) ) {
+			storeLike($( this ))
+			navLike( like );
 		}
 	});
 
-	$( document ).on( "click", ".next", function() {
-		var prev = $( ".ui-page-active" ).jqmData( "prev" );
+	$( document ).on( "click", ".like", function() {
+		var like = $( ".ui-page-active" ).jqmData( "like" );
 
-		if ( prev ) {
-			navprev( prev );
+		if ( like ) {
+			navLike( like );
 		}
 	});
 
@@ -84,9 +99,9 @@ $( document ).on( "pageshow", ".demo-page", function() {
 
 	var thePage = $( this ),
 		title = thePage.jqmData( "title" ),
-		next = thePage.jqmData( "next" ),
-		prev = thePage.jqmData( "prev" ),
-    	song = $( this ).jqmData( "song" )
+		nope  = thePage.jqmData( "nope" ),
+		like  = thePage.jqmData( "like" ),
+    	song  = thePage.jqmData( "song" )
 
     function playSong(sourceUrl) {
 
@@ -114,24 +129,24 @@ $( document ).on( "pageshow", ".demo-page", function() {
 	$( "#header h1" ).text( title );
 
 
-	// Prefetch the next page
+	// Prefetch the nope page
 	// We added data-dom-cache="true" to the page so it won't be deleted
 	// so there is no need to prefetch it
-	if ( next ) {
-		$( ":mobile-pagecontainer" ).pagecontainer( "load", next + ".html" );
+	if ( nope ) {
+		$( ":mobile-pagecontainer" ).pagecontainer( "load", nope + ".html" );
 	}
 
-	// We disable the next or previous buttons in the footer
-	// if there is no next or previous page
+	// We disable the nope or likeious buttons in the footer
+	// if there is no nope or likeious page
 	// We use the same footer on each page
 	// so first we remove the disabled class if it is there
-	$( ".next.ui-state-disabled, .prev.ui-state-disabled" ).removeClass( "ui-state-disabled" );
+	$( ".nope.ui-state-disabled, .like.ui-state-disabled" ).removeClass( "ui-state-disabled" );
 
-	if ( ! next ) {
-		$( ".next" ).addClass( "ui-state-disabled" );
+	if ( ! nope ) {
+		$( ".nope" ).addClass( "ui-state-disabled" );
 	}
-	if ( ! prev ) {
-		$( ".prev" ).addClass( "ui-state-disabled" );
+	if ( ! like ) {
+		$( ".like" ).addClass( "ui-state-disabled" );
 	}
 
 	// Create an array of the links to choose from:

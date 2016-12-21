@@ -3,12 +3,35 @@
 #kalf_2 { background-image: url("../_assets/img/kalf_2.jpg"); }
 #kalf_3 { background-image: url("../_assets/img/kalf_3.jpg"); }
 #kalf_4 { background-image: url("../_assets/img/kalf_4.jpg"); }
-#kalf_vote { background-image: url("../_assets/img/kalf_vote.jpg"); }
 #moments_1 { background-image: url("../_assets/img/moments_1.jpg"); }
 #moments_2 { background-image: url("../_assets/img/moments_2.jpg"); }
 #moments_3 { background-image: url("../_assets/img/moments_3.jpg"); }
 #moments_4 { background-image: url("../_assets/img/moments_4.jpg"); }
-#moments_vote { background-image: url("../_assets/img/moments_vote.jpg"); }
+#dolores_1 { background-image: url("../_assets/img/dolores_1.jpg"); }
+#dolores_2 { background-image: url("../_assets/img/dolores_2.jpg"); }
+#dolores_3 { background-image: url("../_assets/img/dolores_3.jpg"); }
+#dolores_4 { background-image: url("../_assets/img/dolores_4.jpg"); }
+#homelands_1 { background-image: url("../_assets/img/homelands_1.jpg"); }
+#homelands_2 { background-image: url("../_assets/img/homelands_2.jpg"); }
+#homelands_3 { background-image: url("../_assets/img/homelands_3.jpg"); }
+#homelands_4 { background-image: url("../_assets/img/homelands_4.jpg"); }
+#rosemary_blue_1 { background-image: url("../_assets/img/rosemary_blue_1.jpg"); }
+#rosemary_blue_2 { background-image: url("../_assets/img/rosemary_blue_2.jpg"); }
+#rosemary_blue_3 { background-image: url("../_assets/img/rosemary_blue_3.jpg"); }
+#rosemary_blue_4 { background-image: url("../_assets/img/rosemary_blue_4.jpg"); }
+#axelence_1 { background-image: url("../_assets/img/axelence_1.jpg"); }
+#axelence_2 { background-image: url("../_assets/img/axelence_2.jpg"); }
+#axelence_3 { background-image: url("../_assets/img/axelence_3.jpg"); }
+#axelence_4 { background-image: url("../_assets/img/axelence_4.png"); }
+#whyes_1 { background-image: url("../_assets/img/whyes_1.jpg"); }
+#whyes_2 { background-image: url("../_assets/img/whyes_2.jpg"); }
+#whyes_3 { background-image: url("../_assets/img/whyes_3.jpg"); }
+#whyes_4 { background-image: url("../_assets/img/whyes_4.jpg"); }
+#brgt_1 { background-image: url("../_assets/img/brgt_1.jpg"); }
+#brgt_2 { background-image: url("../_assets/img/brgt_2.jpg"); }
+#brgt_3 { background-image: url("../_assets/img/brgt_3.jpg"); }
+#brgt_4 { background-image: url("../_assets/img/brgt_4.jpg"); }
+
 /* Background settings */
 .demo-page {
 	background-size: cover;
